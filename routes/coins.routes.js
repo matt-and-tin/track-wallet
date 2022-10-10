@@ -59,13 +59,11 @@ router.post('/coins/create', (req, res, next) =>
     })
 })
 
-<<<<<<< HEAD
-=======
 //UPDATE: display form
 router.get("/coins/:coinId/edit", (req, res, next) => {
-    Coin.findById(req.params.bookId)
+    Coin.findById(req.params.coinId)
       .then( (coinDetails) => {
-        res.render("coins/coin-edit", coinDetails);
+        res.render("coins/edit-coins", coinDetails);
       })
       .catch( err => {
         console.log("Error getting coin details from DB...", err);
@@ -108,8 +106,7 @@ router.post("/coins/:coinId/delete", (req, res, next) => {
       });
   
   });
->>>>>>> 9bd1f9143a35a17000d3695450f6efe676bb22b0
 
 
 module.exports = router;
->>>>>>> refs/remotes/origin/main
+

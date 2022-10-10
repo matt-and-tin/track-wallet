@@ -1,24 +1,21 @@
-<h2>Coins</h2>
+<h2>Edit the coin: {{name}}</h2>
 
-<form action="/celebrities/create" method="post">
+<form action="/coins/{{_id}}/edit" method="post">
+  <label> Name:
+    <input type="text" name="name" value="{{name}}" />
+  </label>
 
-<label>Name:
-    <input type="text" name="name" />
-</label>
+  <label> Ticker:
+    <input type="text" name="ticker" value="{{ticker}}" />
+  </label>
 
-<label>Value:
-     <input type="text" value="value" />
-</label>
+  <label> Value:
+    <input type="number" name="value" value="{{value}}" />
+  </label>
 
-<label>:Marketcap
-     <input type="text" marketcap="marketcap" />
-</label>
+  <label> Market Cap:
+    <input type="number" name="marketcap" value="{{marketcap}}" />
+  </label>
 
-<label>:Ticker
-     <input type="text" shortname="shortname" />
-</label>
-
-
-  <button type="submit"> Create </button>
-
+  <button>Save changes</button>
 </form>
