@@ -59,16 +59,6 @@ router.post('/coin/create', (req, res, next) =>
     })
 })
 
-router.get("/coins", (req, res, next) => {
-    Celebrity.find()
-    .then((celebritiesFromDB) => {
-        res.render("coins/coins", {coinsFromDB})
-    })
-    .catch(err => {
 
-        console.log("error reading coins in DB", err)
-        next(err);
-    })
-})
 
 module.exports = router;
