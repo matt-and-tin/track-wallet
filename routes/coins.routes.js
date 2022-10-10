@@ -3,9 +3,17 @@
 const router = require('express').Router();
 const Coin = require("../models/Coin.model");
 
-router.get ('.......'), (req, res, next) => {
-res.render('.........');
-}
+//READ: List of all coins
+router.get("/coins", (req, res, next) => {
+    Coin.find()
+      .then( coinsFromDB => {
+          res.render("coins/coins-list", {coins: coinsFromDB})
+      })
+      .catch( err => {
+          console.log("error getting coins from DB", err);
+          next(err);
+      })
+  });
 
 router.post('/coin/create', (req, res, next) =>
 
