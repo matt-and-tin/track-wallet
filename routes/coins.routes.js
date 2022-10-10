@@ -15,6 +15,28 @@ router.get("/coins", (req, res, next) => {
       })
   });
 
+//READ: Coin details
+router.get("/coins/:coinId", (req, res, next) => {
+    const id = req.params.coinId;
+
+    Coin.findById(id)
+    .then(coinDetails => {
+        res.render("coins/coin-details", coinDetails)
+    })
+    .catch( err => {
+        console.log("error getting coin details fom DB", err);
+        next();
+    })
+});
+
+//CREATE: display form
+router.get("/coins/create", (req, res, next) => {
+    
+      res.render("coins/coin-create");
+   
+    
+})
+
 router.post('/coin/create', (req, res, next) =>
 
 {
