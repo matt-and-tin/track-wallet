@@ -1,0 +1,16 @@
+<h2>Coins list:</h2>
+
+{{#each coinFromDB}}
+ <section class="coin-summary">
+        <h2>{{this.title}}</h2>
+        <p>
+            Name: {{this.name}}<br />
+            Value: {{this.value}} <br />
+            Marketcap: {{this.marketcap}} <br />
+            Ticker: {{this.ticker}}
+
+            <a href="/coins/{{id}}">More details</a>
+        </p>
+
+    </section>
+{{/each}}
