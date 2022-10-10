@@ -32,12 +32,12 @@ router.get("/coins/:coinId", (req, res, next) => {
 //CREATE: display form
 router.get("/coins/create", (req, res, next) => {
     
-      res.render("coins/coin-create");
+      res.render("coins/new-coin");
    
     
 })
 
-router.post('/coin/create', (req, res, next) =>
+router.post('/coins/create', (req, res, next) =>
 
 {
     const coinDetails = {
@@ -59,6 +59,57 @@ router.post('/coin/create', (req, res, next) =>
     })
 })
 
+<<<<<<< HEAD
+=======
+//UPDATE: display form
+router.get("/coins/:coinId/edit", (req, res, next) => {
+    Coin.findById(req.params.bookId)
+      .then( (coinDetails) => {
+        res.render("coins/coin-edit", coinDetails);
+      })
+      .catch( err => {
+        console.log("Error getting coin details from DB...", err);
+        next();
+      });
+  });
+
+
+  //UPDATE: process form
+router.post("/coins/:coinId/edit", (req, res, next) => {
+    const coinId = req.params.coinId;
+  
+    const newDetails = {
+        name: req.body.name,
+        value: req.body.value,
+        marketcap: req.body.marketcap,
+        ticker: req.body.ticker
+    }
+  
+    Coin.findByIdAndUpdate(coinId, newDetails)
+      .then( () => {
+        res.redirect(`/coins/${coinId}`);
+      })
+      .catch( err => {
+        console.log("Error updating coin...", err);
+        next();
+      });
+  });
+
+
+//DELETE
+router.post("/coins/:coinId/delete", (req, res, next) => {
+    Coin.findByIdAndDelete(req.params.coinId)
+      .then(() => {
+        res.redirect("/coins");
+      })
+      .catch(err => {
+        console.log("Error deleting coin...", err);
+        next();
+      });
+  
+  });
+>>>>>>> 9bd1f9143a35a17000d3695450f6efe676bb22b0
 
 
 module.exports = router;
+>>>>>>> refs/remotes/origin/main
