@@ -1,0 +1,18 @@
+<h2>Edit portfolio: {{title}}</h2>
+
+<form action="/portfolio/{{_id}}/edit" method="post">
+  <label> Title:
+    <input type="text" name="title" value="{{title}}" />
+  </label>
+
+  <label> Coin:
+    <input type="text" name="coin" value="{{coin}}" />
+  </label>
+
+  <label> Amount:
+    <input type="number" name="amount" value="{{amount}}" />
+  </label>
+
+
+  <button>Save changes</button>
+</form>

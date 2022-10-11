@@ -1,0 +1,23 @@
+<h2>Create a Portfolio</h2>
+
+<form action="/portfolio/create" method="post">
+  <label> Title:
+    <input type="text" name="title" />
+  </label>
+ <br/>
+  <label> Coin:
+    <select name="coin">
+      {{#each coinArr}}
+        <option value="{{this._id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+  </label>
+
+  <label> Amount:
+    <input type="number" name="amount" />
+  </label>
+
+  <br/>
+
+  <button type="submit"> Create Portfolio </button>
+</form>

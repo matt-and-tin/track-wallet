@@ -1,0 +1,15 @@
+<h2>Portfolios:</h2>
+
+{{#each portfolios}}
+ <section>
+        <p>
+            Title: {{this.title}}<br />
+            
+            Coin: {{this.coin.name}}, Amount: {{this.amount}} <br />
+            
+            <a href="/portfolio/{{id}}">More details</a>
+            <a href="/portfolio/{{_id}}/edit">Edit this portfolio</a>
+        </p>
+
+    </section>
+{{/each}}

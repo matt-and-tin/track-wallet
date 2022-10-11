@@ -40,6 +40,8 @@ app.use("/", authRoutes);
 
 app.use("/", require("./routes/coins.routes"))
 
+app.use("/", require("./routes/portfolio.routes"))
+
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes

@@ -1,5 +1,20 @@
 const router = require('express').Router();
 const Coin = require("../models/Coin.model");
+const Portfolio = require("../models/Portfolio.model");
+
+//READ: List of portfolios
+router.get("/portfolio", (req, res, next) => {
+    Portfolio.find()
+    .populate("coin")
+      .then( portFromDB => {
+          res.render("portfolio/portfolio-list", {portfolios: portFromDB})
+      })
+      .catch( err => {
+          console.log("error getting portfolios from DB", err);
+          next(err);
+      })
+  });
+
 
 //READ: Portfolio details
 router.get("/portfolio/:portfolioId", (req, res, next) => {
@@ -7,7 +22,7 @@ router.get("/portfolio/:portfolioId", (req, res, next) => {
 
     Portfolio.findById(id)
     .then(portDetails => {
-        res.render("portfolio/user-portfolio", portDetails)
+        res.render("portfolio/portfolio-details", portDetails)
     })
     .catch( err => {
         console.log("error getting portfolio fom DB", err);
@@ -17,8 +32,14 @@ router.get("/portfolio/:portfolioId", (req, res, next) => {
 
 //CREATE: display form
 router.get("/portfolio/create", (req, res, next) => {
-    
-    res.render("portfolio/new-portfolio");
+    Coin.find()
+    .then((coinArr) => {
+        res.render("portfolio/new-portfolio", {coinArr});
+    })
+    .catch(err => {
+        console.log("error getting coins from DB", err);
+        next(err);
+      })
  
   
 })
@@ -26,12 +47,13 @@ router.get("/portfolio/create", (req, res, next) => {
 //CREATE: process form
 router.post('/portfolio/create', (req, res, next) =>{
   const portDetails = {
-
+    title: req.body.title,
       coin: req.body.coin,
+      amount: req.body.amount,
   }
 
   Portfolio.create(portDetails)
-  .then(() => {   
+  .then((portDetails) => {   
       res.redirect("/portfolio")
   })
   .catch(err => {
@@ -58,8 +80,9 @@ router.get("/portfolio/:portfolioId/edit", (req, res, next) => {
     const portfolioId = req.params.portfolioId;
   
     const newDetails = {
-
-        coin: req.body.coin,
+        title: req.body.title,
+      coin: req.body.coin,
+      amount: req.body.amount,
     }
   
     Portfolio.findByIdAndUpdate(portfolioId, newDetails)
