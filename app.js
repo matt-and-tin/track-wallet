@@ -24,7 +24,7 @@ const projectName = "track-wallet";
 app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 
 app.use((req, res, next) => {
-    res.locals.userInSession = req.session.currentUser;   
+    res.locals.userInSession = req.session.user;   
     next();
     })
     
