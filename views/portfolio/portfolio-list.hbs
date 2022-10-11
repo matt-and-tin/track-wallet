@@ -4,9 +4,16 @@
  <section>
         <p>
             Title: {{this.title}}<br />
-            
-            Coin: {{this.coin.name}}, Amount: {{this.amount}} <br />
-            
+
+            Coins: 
+            {{#each this.coin}}
+            {{ticker}} 
+            {{/each}}
+            <br />
+            Amount: {{this.amount}} <br />
+
+            Total Value: {{this.value}}
+            <br />
             <a href="/portfolio/{{id}}">More details</a>
             <a href="/portfolio/{{_id}}/edit">Edit this portfolio</a>
         </p>

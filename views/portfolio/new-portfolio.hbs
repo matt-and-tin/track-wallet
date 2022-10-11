@@ -5,7 +5,23 @@
     <input type="text" name="title" />
   </label>
  <br/>
-  <label> Coin:
+  <label> Coins:
+    <br/>
+    <select name="coin">
+      {{#each coinArr}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        <label> Amount:
+            <input type="number" name="{{this.amount}}" />
+        </label>
+      {{/each}}
+    </select>
+    <br/>
+    <select name="coin">
+      {{#each coinArr}}
+        <option value="{{this._id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+    <br/>
     <select name="coin">
       {{#each coinArr}}
         <option value="{{this._id}}">{{this.name}}</option>
@@ -13,9 +29,9 @@
     </select>
   </label>
 
-  <label> Amount:
+  {{!-- <label> Amount:
     <input type="number" name="amount" />
-  </label>
+  </label> --}}
 
   <br/>
 

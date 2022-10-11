@@ -7,6 +7,8 @@ router.get("/portfolio", (req, res, next) => {
     Portfolio.find()
     .populate("coin")
       .then( portFromDB => {
+        //console.log(portFromDB[2].coin)
+        console.log({portfolios: portFromDB})
           res.render("portfolio/portfolio-list", {portfolios: portFromDB})
       })
       .catch( err => {
@@ -21,7 +23,9 @@ router.get("/portfolio/:portfolioId", (req, res, next) => {
     const id = req.params.portfolioId;
 
     Portfolio.findById(id)
+    .populate("coin")
     .then(portDetails => {
+        console.log(portDetails)
         res.render("portfolio/portfolio-details", portDetails)
     })
     .catch( err => {
@@ -49,7 +53,8 @@ router.post('/portfolio/create', (req, res, next) =>{
   const portDetails = {
     title: req.body.title,
       coin: req.body.coin,
-      amount: req.body.amount,
+       amount: req.body.coin.amount,
+       value: req.body.value,
   }
 
   Portfolio.create(portDetails)

@@ -4,11 +4,13 @@ const { Schema, model } = require('mongoose');
 const portSchema = new Schema(
     {
         title: String,
-        coin: {
+        coin: [{
                  type: Schema.Types.ObjectId,
                  ref: "Coin",
-               },
-        amount: Number
+                 amount: Number,
+               }],
+         
+         value: Number,
     },
 );
 

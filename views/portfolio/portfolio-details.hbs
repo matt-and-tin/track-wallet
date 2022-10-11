@@ -1,7 +1,11 @@
 <section>
     <h2>{{title}}</h2>
     <p>
-        <strong>Coin: </strong> {{this.coin.name}} <br />
+        <strong>Coins: </strong> 
+        {{#each coin}}
+        {{this.name}} 
+        {{/each}}
+        <br />
     </p>
     <p>
         <strong>Amount:</strong>

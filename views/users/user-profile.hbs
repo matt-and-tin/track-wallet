@@ -3,6 +3,7 @@
 {{#if userInSession}}
   <h2>Welcome, {{ userInSession.email }}!</h2>
   <a href="/portfolio">View Portfolios</a>
+  <a href="/portfolio/create">Create Portfolio</a>
 {{else}}
   <p>Still no logged in user, sorry!</p>
 {{/if}}
