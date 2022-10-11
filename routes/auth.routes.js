@@ -11,17 +11,17 @@ const saltRounds = 10;
 const User = require("../models/User.model");
 
 // Require necessary (isLoggedOut and isLoggedIn) middleware in order to control access to specific routes
-const isLoggedOut = require("../middleware/isLoggedOut");
-const isLoggedIn = require("../middleware/isLoggedIn");
+// const isLoggedOut = require("../middleware/isLoggedOut");
+// const isLoggedIn = require("../middleware/isLoggedIn");
 
-router.get("/signup", isLoggedOut, (req, res) => {
+router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", isLoggedOut, (req, res) => {
-  const { username, password } = req.body;
+router.post("/signup", (req, res, next) => {
+  const { email, password } = req.body;
 
-  if (!username) {
+  if (!email) {
     return res.status(400).render("auth/signup", {
       errorMessage: "Please provide your username.",
     });
@@ -36,7 +36,6 @@ router.post("/signup", isLoggedOut, (req, res) => {
   //   ! This use case is using a regular expression to control for special characters and min length
   /*
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
-
   if (!regex.test(password)) {
     return res.status(400).render("auth/signup", {
       errorMessage:
@@ -46,7 +45,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
   */
 
   // Search the database for a user with the username submitted in the form
-  User.findOne({ username }).then((found) => {
+  User.findOne({ email }).then((found) => {
     // If the user is found, send the message username is taken
     if (found) {
       return res
@@ -61,8 +60,15 @@ router.post("/signup", isLoggedOut, (req, res) => {
       .then((hashedPassword) => {
         // Create a user and save it in the database
         return User.create({
-          username,
-          password: hashedPassword,
+          email,
+          passwordHash: hashedPassword,
+          // portfolio: [{
+          //   coin: {
+          //     type: Schema.Types.ObjectId,
+          //     ref: "Coin",
+          //     amount: Number
+          //   }
+          // }],
         });
       })
       .then((user) => {
@@ -88,69 +94,86 @@ router.post("/signup", isLoggedOut, (req, res) => {
   });
 });
 
-router.get("/login", isLoggedOut, (req, res) => {
-  res.render("auth/login");
-});
 
-router.post("/login", isLoggedOut, (req, res, next) => {
-  const { username, password } = req.body;
+// // router.get("/login", isLoggedOut, (req, res) => {
+// //   res.render("auth/login");
+// // });
 
-  if (!username) {
-    return res
-      .status(400)
-      .render("auth/login", { errorMessage: "Please provide your username." });
-  }
+// // router.post("/login", isLoggedOut, (req, res, next) => {
+// //   const { username, password } = req.body;
 
-  // Here we use the same logic as above
-  // - either length based parameters or we check the strength of a password
-  if (password.length < 8) {
-    return res
-      .status(400)
-      .render("auth/login", { errorMessage: "Your password needs to be at least 8 characters long." });
-  }
+// //   if (!username) {
+// //     return res
+// //       .status(400)
+// //       .render("auth/login", { errorMessage: "Please provide your username." });
+// //   }
 
-  // Search the database for a user with the username submitted in the form
-  User.findOne({ username })
-    .then((user) => {
-      // If the user isn't found, send the message that user provided wrong credentials
-      if (!user) {
-        return res
-          .status(400)
-          .render("auth/login", { errorMessage: "Wrong credentials." });
+// //   // Here we use the same logic as above
+// //   // - either length based parameters or we check the strength of a password
+// //   if (password.length < 8) {
+// //     return res
+// //       .status(400)
+// //       .render("auth/login", { errorMessage: "Your password needs to be at least 8 characters long." });
+// //   }
+
+// //   // Search the database for a user with the username submitted in the form
+// //   User.findOne({ username })
+// //     .then((user) => {
+// //       // If the user isn't found, send the message that user provided wrong credentials
+// //       if (!user) {
+// //         return res
+// //           .status(400)
+// //           .render("auth/login", { errorMessage: "Wrong credentials." });
+// //       }
+
+// //       // If user is found based on the username, check if the in putted password matches the one saved in the database
+// //       bcrypt.compare(password, user.password).then((isSamePassword) => {
+// //         if (!isSamePassword) {
+// //           return res
+// //             .status(400)
+// //             .render("auth/login", { errorMessage: "Wrong credentials." });
+// //         }
+
+// //         req.session.user = user;
+// //         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
+// //         return res.redirect("/");
+// //       });
+// //     })
+
+// //     .catch((err) => {
+// //       // in this case we are sending the error handling to the error handling middleware that is defined in the error handling file
+// //       // you can just as easily run the res.status that is commented out below
+// //       next(err);
+// //       // return res.status(500).render("auth/login", { errorMessage: err.message });
+// //     });
+// // });
+
+//USER-PROFILE
+ router.get('/user-profile', (req, res) => {
+   res.render('users/user-profile');
+ });
+
+//LOGOUT
+router.post('/logout', (req, res, next) => {
+  req.session.destroy(err => {
+      if (err) {
+          next(err);
+      } else {
+          res.redirect('/');
       }
-
-      // If user is found based on the username, check if the in putted password matches the one saved in the database
-      bcrypt.compare(password, user.password).then((isSamePassword) => {
-        if (!isSamePassword) {
-          return res
-            .status(400)
-            .render("auth/login", { errorMessage: "Wrong credentials." });
-        }
-
-        req.session.user = user;
-        // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
-        return res.redirect("/");
-      });
-    })
-
-    .catch((err) => {
-      // in this case we are sending the error handling to the error handling middleware that is defined in the error handling file
-      // you can just as easily run the res.status that is commented out below
-      next(err);
-      // return res.status(500).render("auth/login", { errorMessage: err.message });
-    });
-});
-
-router.get("/logout", isLoggedIn, (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      return res
-        .status(500)
-        .render("auth/logout", { errorMessage: err.message });
-    }
-    
-    res.redirect("/");
   });
 });
+
+// router.get("/logout", isLoggedIn, (req, res) => {
+//   req.session.destroy((err) => {
+//     if (err) {
+//       return res
+//         .status(500)
+//         .render("auth/logout", { errorMessage: err.message });
+//     }
+    
+//     res.redirect("/");
+//   });
+// });
 
 module.exports = router;

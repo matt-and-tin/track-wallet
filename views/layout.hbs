@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -14,6 +15,20 @@
       <p>
         <a href="/coins/create"> Create a Coin</a>
         <a href="/coins"> List of Coins</a>
+      </p>
+
+      <p>
+         {{#if userInSession}}
+            Hello, {{ userInSession.email }} |
+            <a href="/user-profile">Profile Page</a>
+            <br>
+            <form id="logout-form" action="/logout" method="POST">
+               <button>Logout</button>
+            </form>
+         {{else}}
+            <a href="/signup">Register</a> |
+            <a href="/login">Login</a> |
+         {{/if}}
       </p>
     </header>
 
