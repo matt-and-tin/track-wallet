@@ -37,6 +37,7 @@ router.get("/coins/create", (req, res, next) => {
     
 })
 
+//CREATE: process form
 router.post('/coins/create', (req, res, next) =>
 
 {

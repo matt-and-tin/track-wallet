@@ -15,13 +15,13 @@ const userSchema = new Schema(
       type: String,
       required: [true, 'Password is required.']
     },
-    portfolio: [{
-      coin: {
-        type: Schema.Types.ObjectId,
-        ref: "Coin",
-        amount: Number
-      }
-    }]
+    // portfolio: [{
+    //   coin: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Coin",
+    //     amount: Number
+    //   }
+    // }]
   }
 );
 
