@@ -10,9 +10,6 @@
     <select name="coin">
       {{#each coinArr}}
         <option value="{{this._id}}">{{this.name}}</option>
-        <label> Amount:
-            <input type="number" name="{{this.amount}}" />
-        </label>
       {{/each}}
     </select>
     <br/>

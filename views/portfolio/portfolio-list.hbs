@@ -7,12 +7,17 @@
 
             Coins: 
             {{#each this.coin}}
-            {{ticker}} 
+            {{ticker}}
+            {{!-- {{ value }}  --}}
             {{/each}}
             <br />
-            Amount: {{this.amount}} <br />
+            {{!-- Amount: {{this.amount}} <br /> --}}
 
-            Total Value: {{this.value}}
+            Total Value: 
+            {{#each this.coin}}
+            {{add value}}
+            {{/each}}
+            
             <br />
             <a href="/portfolio/{{id}}">More details</a>
             <a href="/portfolio/{{_id}}/edit">Edit this portfolio</a>
