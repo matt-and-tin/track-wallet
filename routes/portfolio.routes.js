@@ -7,8 +7,8 @@ router.get("/portfolio", (req, res, next) => {
     Portfolio.find()
     .populate("coin")
       .then( portFromDB => {
-        //console.log(portFromDB[2].coin)
-        console.log({portfolios: portFromDB})
+        
+        //console.log({portfolios: portFromDB})
           res.render("portfolio/portfolio-list", {portfolios: portFromDB})
       })
       .catch( err => {
@@ -25,7 +25,15 @@ router.get("/portfolio/:portfolioId", (req, res, next) => {
     Portfolio.findById(id)
     .populate("coin")
     .then(portDetails => {
+        let tv = 0
+         for(let i=0; i < portDetails.coin.length; i++){
+            
+             tv = tv + portDetails.coin[i].value
+         }
+         portDetails.value = tv
+
         console.log(portDetails)
+        //console.log(portDetails)
         res.render("portfolio/portfolio-details", portDetails)
     })
     .catch( err => {
@@ -53,8 +61,7 @@ router.post('/portfolio/create', (req, res, next) =>{
   const portDetails = {
     title: req.body.title,
       coin: req.body.coin,
-       amount: req.body.coin.amount,
-       value: req.body.value,
+       
   }
 
   Portfolio.create(portDetails)
@@ -71,7 +78,9 @@ router.post('/portfolio/create', (req, res, next) =>{
 //UPDATE: display form
 router.get("/portfolio/:portfolioId/edit", (req, res, next) => {
     Portfolio.findById(req.params.portfolioId)
+        .populate("coin")
       .then( (portDetails) => {
+        console.log(portDetails)
         res.render("portfolio/edit-portfolio", portDetails);
       })
       .catch( err => {
