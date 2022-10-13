@@ -12,16 +12,26 @@
   <body>
 
     <header>
-      <p>
-         <button class="button-8" role="button">
-        <a href="/"> Home</a></button>
-        <button class="button-8" role="button">
-        <a href="/coins/create"> Create a Coin</a></button>
-        <button class="button-8" role="button">
-        <a href="/coins"> List of Coins</a> </button>
-      </p>
+    
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">More
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/">Home</a>
+      <a href="coins/create">Create a Coin</a>
+      <a href="/coins">List of Coins</a>
+    </div>
+  </div>
+</div>
+
+
+
+      </p></ul>
     {{{body}}}
       <p>
+        <br><br>
          {{#if userInSession}}
             Hello, {{ userInSession.email }} |
             <a href="/user-profile">Profile</a> |
