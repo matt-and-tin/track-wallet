@@ -13,14 +13,17 @@
 
     <header>
       <p>
-        <a href="/coins/create"> Create a Coin</a>
-        <a href="/coins"> List of Coins</a>
+        <a href="/"> Home</a> |
+        <a href="/coins/create"> Create a Coin</a> |
+        <a href="/coins"> List of Coins</a> 
       </p>
 
       <p>
          {{#if userInSession}}
             Hello, {{ userInSession.email }} |
-            <a href="/user-profile">Your Profile</a>
+            <a href="/user-profile">Profile</a> |
+            <a href="/portfolio">View Portfolios</a> |
+            <a href="/portfolio/create">Create Portfolio</a>
             <br>
             <form id="logout-form" action="/logout" method="POST">
                <button>Logout</button>

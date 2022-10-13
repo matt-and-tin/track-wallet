@@ -4,9 +4,9 @@ const Coin = require("../models/Coin.model");
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/track-wallet";
 
 const coins = [
-    { name: "Bitcoin", ticker: "BTC", value: 19500, marketcap: 378000000000 },
-    { name: "Ethereum", ticker: "ETH", value: 1300, marketcap: 164000000000 },
-    { name: "Solana", ticker: "SOL", value: 30, marketcap: 11000000000 }
+    { name: "Bitcoin", ticker: "BTC", value: 0 },
+    { name: "Ethereum", ticker: "ETH", value: 0 },
+    { name: "Solana", ticker: "SOL", value: 0 }
   ];
 
 mongoose
