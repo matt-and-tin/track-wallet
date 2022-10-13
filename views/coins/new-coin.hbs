@@ -1,4 +1,4 @@
-<h2>Add a Coin</h2>
+<h2>Add a real Coin</h2>
 
 <form action="/coins/create" method="post">
   <label> Name (e.g. Bitcoin):
@@ -10,5 +10,24 @@
   </label>
 <br/>
 
+  <button type="submit"> Add Coin </button>
+</form>
+
+
+<h2>Create a custom Coin</h2>
+
+<form action="/coins/create" method="post">
+  <label> Name (e.g. Poocoin):
+    <input type="text" name="name" />
+  </label>
+ <br/>
+  <label> Shortname (e.g. PCN):
+    <input type="text" name="ticker"/>
+  </label>
+<br/>
+<label> Price:
+    <input type="text" name="value"/>
+  </label>
+<br/>
   <button type="submit"> Create Coin </button>
 </form>
