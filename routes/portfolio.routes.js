@@ -80,7 +80,7 @@ router.get("/portfolio/:portfolioId/edit", (req, res, next) => {
     Portfolio.findById(req.params.portfolioId)
         .populate("coin")
       .then( (portDetails) => {
-        console.log(portDetails)
+        console.log(portDetails.coin)
         res.render("portfolio/edit-portfolio", portDetails);
       })
       .catch( err => {

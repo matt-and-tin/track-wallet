@@ -2,11 +2,11 @@
 
 <form action="/coins/create" method="post">
   <label> Name (e.g. Bitcoin):
-    <input type="text" name="name" />
+    <input type="text" name="name" required/>
   </label>
  <br/>
   <label> Shortname (e.g. BTC):
-    <input type="text" name="ticker"/>
+    <input type="text" name="ticker" required/>
   </label>
 <br/>
 
@@ -18,15 +18,15 @@
 
 <form action="/coins/create" method="post">
   <label> Name (e.g. Poocoin):
-    <input type="text" name="name" />
+    <input type="text" name="name" required/>
   </label>
  <br/>
   <label> Shortname (e.g. PCN):
-    <input type="text" name="ticker"/>
+    <input type="text" name="ticker" required/>
   </label>
 <br/>
 <label> Price:
-    <input type="text" name="value"/>
+    <input type="text" name="value" required/>
   </label>
 <br/>
   <button type="submit"> Create Coin </button>

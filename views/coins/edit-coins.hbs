@@ -2,15 +2,15 @@
 
 <form action="/coins/{{_id}}/edit" method="post">
   <label> Name:
-    <input type="text" name="name" value="{{name}}" />
+    <input type="text" name="name" value="{{name}}" required/>
   </label>
 
   <label> Shortname:
-    <input type="text" name="ticker" value="{{ticker}}" />
+    <input type="text" name="ticker" value="{{ticker}}" required/>
   </label>
 
   <label> Price:
-    <input type="number" name="value" value="{{value}}" />
+    <input type="number" name="value" value="{{value}}" required/>
   </label>
 
   <button>Save changes</button>
