@@ -116,7 +116,7 @@ router.post("/signup", (req, res, next) => {
        .render("auth/login", { errorMessage: "Your password needs to be at least 8 characters long." });
    }
    // Search the database for a user with the username submitted in the form
-   User.findOne({ email })
+   User.findOne({ email: email })
      .then((user) => {
        // If the user isn't found, send the message that user provided wrong credentials
        if (!user) {
