@@ -1,36 +1,38 @@
-<h2>Add a real Coin</h2>
+<h1>Add a real Coin</h1>
 <div id="form">
 <form action="/coins/create" method="post">
-  <label> Name (e.g. Bitcoin):
+  <ul><li><h2> Name (e.g. Bitcoin):
     <input type="text" name="name" required/>
-  </label>
+  </h2></li>
  <br/>
-  <label> Shortname (e.g. BTC):
+  <li><h2> Shortname (e.g. BTC):
     <input type="text" name="ticker" required/>
-  </label>
+  </h2></li>
 <br/>
 </div>
  <button class="button-54" role="button"
 type="submit"> Add Coin </button>
-</form>
+</form></ul>
+<br><br><br>
 
-
-<h2>Create a custom Coin</h2>
+<h1>Create a custom Coin</h1>
 <div id="form">
 <form action="/coins/create" method="post">
-  <label> Name (e.g. MyCoin):
+<ul>
+  <li><h2> Name:
     <input type="text" name="name" required/>
-  </label>
+  </h2></li>
  <br/>
-  <label> Shortname (e.g. MCN):
+  <li><h2> Ticker:
     <input type="text" name="ticker" required/>
-  </label>
+  </h2></li>
 <br/>
-<label> Price:
+<li><h2> Price:
     <input type="text" name="value" required/>
-  </label>
+  </h2></li></ul>
 <br/>
 </div>
   <button class="button-54" role="button"
   type="submit"> Create Coin </button>
+ 
 </form>
