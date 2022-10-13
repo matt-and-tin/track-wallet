@@ -3,7 +3,7 @@ body{
   
  }
  body{
-   padding:15%;
+   padding:16%;
    text-decoration: none;
    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
  };
@@ -310,6 +310,11 @@ body{
  h3 { color: #ffffff;
   font-family: 'Raleway',sans-serif; font-size: 20px; font-weight: 600; line-height: 36px; margin: 0 0 24px; text-align: left; }
 
+  h4 { 
+    text-shadow: 2px 2px 4px #000000;
+    color: #ffffff;
+    font-family: 'Raleway',sans-serif; font-size: 20px; font-weight: 600; line-height: 36px; margin: 0 0 24px; text-align: left; }
+
 .button-54 {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
@@ -423,4 +428,98 @@ li {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: flex;
+}
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,900,400italic,700italic,900italic);
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+
+
+#container {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 100%;
+}
+
+h6 {
+    animation: text-shadow 1.5s ease-in-out infinite;
+    font-size: 3em;
+    font-weight: 800;
+    line-height: 1;
+}
+
+h6:hover {
+    animation-play-state: paused;
+}
+
+a {
+    color: #024794;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+@keyframes text-shadow {
+    0% {  
+        transform: translateY(0);
+        text-shadow: 
+            0 0 0 #0c2ffb, 
+            0 0 0 #2cfcfd, 
+            0 0 0 #fb203b, 
+            0 0 0 #fefc4b;
+    }
+
+    20% {  
+        transform: translateY(-1em);
+        text-shadow: 
+            0 0.125em 0 #0c2ffb, 
+            0 0.25em 0 #2cfcfd, 
+            0 -0.125em 0 #fb203b, 
+            0 -0.25em 0 #fefc4b;
+    }
+
+    40% {  
+        transform: translateY(0.5em);
+        text-shadow: 
+            0 -0.0625em 0 #0c2ffb, 
+            0 -0.125em 0 #2cfcfd, 
+            0 0.0625em 0 #fb203b, 
+            0 0.125em 0 #fefc4b;
+    }
+    
+   60% {
+        transform: translateY(-0.25em);
+        text-shadow: 
+            0 0.03125em 0 #0c2ffb, 
+            0 0.0625em 0 #2cfcfd, 
+            0 -0.03125em 0 #fb203b, 
+            0 -0.0625em 0 #fefc4b;
+    }
+
+    80% {  
+        transform: translateY(0);
+        text-shadow: 
+            0 0 0 #0c2ffb, 
+            0 0 0 #2cfcfd, 
+            0 0 0 #fb203b, 
+            0 0 0 #fefc4b;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
 }
