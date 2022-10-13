@@ -1,73 +1,3 @@
-<<<<<<< HEAD
-/* body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00b7ff;
-}
-
-h1 {
-  color: 15px;
-}
- */
-
-
-
- 
-body{
-  background: #8a8aa2;
-};
-
-form{
-  width: 900px;
-  padding:20px;
-  margin:0;
-  background:hsl(240, 75%, 27%)
-};
-input[type=text]{
-  width:100%;
-  padding:5px;
-  font-size: 17px;
-};
-input[type=submit]{
-  padding:5px;
-  font-size: 18px;
-}
-
-.form * {
-  box-sizing: border-box;
-  line-height: 1.5;
-}
-
-.form__title{
-
-  font-size: 2em;
-  font-weight: 600;
-}
-
-.form__item{
-  display: flex;
-  flex-direction: column;
-}
-.form__item > * {
-
-  align-self: flex-start;
-}
-
-.form__label {
-  font-weight: 600;
-  padding: 10px 0
-}
-
-.form__input{
-  -webkit-appereance: none;
-
-  width: 100%;
-  max-width: 425px
-}
-=======
 body{
   background-image: url("/images/skypic.jpg");
   
@@ -357,4 +287,3 @@ body{
    display: block;
    max-width: 100%;
  }
->>>>>>> 088d3fda0249d517bd0dbe2147ca477b6b2f8037
