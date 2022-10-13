@@ -13,11 +13,14 @@
 
     <header>
       <p>
-        <a href="/"> Home</a> |
-        <a href="/coins/create"> Create a Coin</a> |
-        <a href="/coins"> List of Coins</a> 
+         <button class="button-8" role="button">
+        <a href="/"> Home</a></button>
+        <button class="button-8" role="button">
+        <a href="/coins/create"> Create a Coin</a></button>
+        <button class="button-8" role="button">
+        <a href="/coins"> List of Coins</a> </button>
       </p>
-
+    {{{body}}}
       <p>
          {{#if userInSession}}
             Hello, {{ userInSession.email }} |
@@ -29,15 +32,21 @@
                <button>Logout</button>
             </form>
          {{else}}
-            <a href="/signup">Register</a> |
-            <a href="/login">Login</a> |
+          <button class="button-56" role="button">
+            <a href="/signup">Register</a></button>
+             <button class="button-56" role="button">
+            <a href="/login">Login</a></button>
          {{/if}}
       </p>
     </header>
 
-    {{{body}}}
+
+
+
+
 
     <script src="/js/script.js"></script>
   </body>
+
 
 </html>

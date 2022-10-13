@@ -1,5 +1,5 @@
 <h2>Add a real Coin</h2>
-
+<div id="form">
 <form action="/coins/create" method="post">
   <label> Name (e.g. Bitcoin):
     <input type="text" name="name" required/>
@@ -9,13 +9,14 @@
     <input type="text" name="ticker" required/>
   </label>
 <br/>
-
-  <button type="submit"> Add Coin </button>
+</div>
+ <button class="button-54" role="button"
+type="submit"> Add Coin </button>
 </form>
 
 
 <h2>Create a custom Coin</h2>
-
+<div id="form">
 <form action="/coins/create" method="post">
   <label> Name (e.g. MyCoin):
     <input type="text" name="name" required/>
@@ -29,5 +30,7 @@
     <input type="text" name="value" required/>
   </label>
 <br/>
-  <button type="submit"> Create Coin </button>
+</div>
+  <button class="button-54" role="button"
+  type="submit"> Create Coin </button>
 </form>
