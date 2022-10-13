@@ -16,9 +16,9 @@ router.get("/coins", (req, res, next) => {
     Coin.find()
       .then( coinsFromDB => {
         // console.log(coinsFromDB)
-          //res.render("coins/coins-list", {coins: coinsFromDB})
+          res.render("coins/coins-list", {coins: coinsFromDB})
 
-          
+
       })
       .catch( err => {
           console.log("error getting coins from DB", err);
