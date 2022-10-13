@@ -1,21 +1,14 @@
 <h2>Add a Coin</h2>
 
 <form action="/coins/create" method="post">
-  <label> Name:
+  <label> Name (e.g. Bitcoin):
     <input type="text" name="name" />
   </label>
-
-  <label> Marketcap:
-    <input type="number" name="marketcap" />
-  </label>
-
-  <label> Value:
-    <input type="number" name="value" />
-  </label>
-
-  <label> Ticker:
+ <br/>
+  <label> Shortname (e.g. BTC):
     <input type="text" name="ticker"/>
   </label>
+<br/>
 
   <button type="submit"> Create Coin </button>
 </form>

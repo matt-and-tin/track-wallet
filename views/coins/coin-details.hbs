@@ -1,17 +1,13 @@
-<section class="book-details">
+<section>
     <h2>{{name}}</h2>
     <p>
-        <strong>Ticker-Symbol: </strong> {{ticker}} <br />
+        <strong>Shortname: </strong> {{ticker}} <br />
     </p>
+    <form action="/coins/{{_id}}" method="post"></form>
     <p>
-        <strong>Value:</strong>
+        <strong>Price:</strong>
         ${{value}}
     </p>
-
-    {{!-- <p>
-        <strong>Market Cap:</strong>
-        ${{marketcap}}
-    </p> --}}
 
     <p>
         <form action="/coins/{{_id}}/delete" method="POST">

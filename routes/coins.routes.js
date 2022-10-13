@@ -5,20 +5,10 @@ const Coin = require("../models/Coin.model");
 
 //READ: List of all coins
 router.get("/coins", (req, res, next) => {
-  // params = {
-  //   base: "USD",
-  //   currencies: "BTC"
-  // } 
-  // api.getFiatPrice(params)
-  //  .then((data) => {
-  //    console.log(data.data.BTC)
-  //  })
     Coin.find()
       .then( coinsFromDB => {
         // console.log(coinsFromDB)
           res.render("coins/coins-list", {coins: coinsFromDB})
-
-
       })
       .catch( err => {
           console.log("error getting coins from DB", err);
@@ -50,6 +40,7 @@ router.get("/coins/:coinId", (req, res, next) => {
     })
 });
 
+
 //CREATE: display form
 router.get("/coins/create", (req, res, next) => {
     
@@ -66,12 +57,11 @@ router.post('/coins/create', (req, res, next) =>
 
         name: req.body.name,
         value: req.body.value,
-        marketcap: req.body.marketcap,
         ticker: req.body.ticker
     }
-
     Coin.create(coinDetails)
-    .then(() => {   
+    .then(() => {  
+
         res.redirect("/coins")
     })
     .catch(err => {
@@ -85,8 +75,18 @@ router.post('/coins/create', (req, res, next) =>
 router.get("/coins/:coinId/edit", (req, res, next) => {
     Coin.findById(req.params.coinId)
       .then( (coinDetails) => {
+        let x = coinDetails.ticker
+      params = {
+         base: "USD",
+         currencies: x
+       } 
+       api.getFiatPrice(params)
+        .then((data) => {
+          coinDetails.value = parseFloat(Object.values(data.data))
+          console.log(coinDetails)
         res.render("coins/edit-coins", coinDetails);
       })
+    })
       .catch( err => {
         console.log("Error getting coin details from DB...", err);
         next();

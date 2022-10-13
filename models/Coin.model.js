@@ -6,7 +6,6 @@ const coinSchema = new Schema(
         name: String,
         ticker: String,
         value: Number,
-        marketcap: String,
     },
 );
 
