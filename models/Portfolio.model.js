@@ -5,7 +5,7 @@ const portSchema = new Schema(
     {
         title: String,
         value: Number,
-        user: [{
+        owner: [{
             type: Schema.Types.ObjectId,
             ref: "User",
           }],
