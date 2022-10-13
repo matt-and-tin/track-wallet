@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -66,3 +67,294 @@ input[type=submit]{
   width: 100%;
   max-width: 425px
 }
+=======
+body{
+  background-image: url("/images/skypic.jpg");
+  
+ }
+ body{
+   padding:10%;
+   text-decoration: none;
+   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+ };
+ 
+ .box{
+   width: 900px;
+   padding:20px;
+   margin:0;
+   background:hsl(240, 75%, 27%)
+   
+ }
+ #form {
+   width: 900px;
+   padding:20px;
+   margin:10;
+   background:hsl(201, 39%, 68%);
+   box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+ };
+ 
+ input[type=text]{
+   width:100%;
+   padding:5px;
+   font-size: 17px;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+ 
+ };
+ input[type=submit]{
+   padding:5px;
+   font-size: 18px;
+ }
+ 
+ .form * {
+   box-sizing: border-box;
+   line-height: 1.5;
+ }
+ 
+ .form__title{
+ 
+   font-size: 2em;
+   font-weight: 1000;
+ }
+ 
+ .form__item{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   justify-content: flex-end;
+ }
+ .form__item > * {
+ 
+   align-self: flex-start;
+ }
+ 
+ .form__label {
+   font-weight: 600;
+   padding: 10px 0
+ }
+  text-decoration: none;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+ 
+ .form__input{
+   -webkit-appereance: none;
+ 
+   width: 100%;
+   max-width: 425px
+ }
+ 
+ .header {
+   font-style: oblique;
+   size:100px;
+ }
+ 
+ .button-8 {  border-radius: 3px;
+   border: 1px solid #7aa7c7;
+   box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+   box-sizing: border-box;
+   color: #39739d;
+   cursor: pointer;
+   display: inline-block;
+   font-size: 13px;
+   font-weight: 400;
+   line-height: 1.15385;
+   margin: 0;
+   outline: none;
+   padding: 8px .8em;
+   position: relative;
+   text-align: center;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   vertical-align: baseline;
+   white-space: nowrap;
+   text-decoration: none;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+   
+ };
+ .button-8:hover,
+ .button-8:focus {
+   background-color: #b3d3ea;
+   color: #2c5777;
+ }
+ .button-8:focus {
+   box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+ }
+ .button-8:active {
+   background-color: #a0c7e4;
+   box-shadow: none;
+   color: #2c5777;
+ }
+ .button-56 {
+   align-items: center;
+   background-color: #fee6e3;
+   border: 2px solid #111;
+   border-radius: 8px;
+   box-sizing: border-box;
+   color: #111;
+   cursor: pointer;
+   display: flex;
+   font-family: Inter,sans-serif;
+   font-size: 16px;
+   height: 48px;
+   justify-content: center;
+   line-height: 24px;
+   max-width: 100%;
+   padding: 0 25px;
+   position: relative;
+   text-align: center;
+   text-decoration: none;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+ }
+ 
+ .button-56:after {
+   background-color: #111;
+   border-radius: 8px;
+   content: "";
+   display: block;
+   height: 48px;
+   left: 0;
+   width: 100%;
+   position: absolute;
+   top: -2px;
+   transform: translate(8px, 8px);
+   transition: transform .2s ease-out;
+   z-index: -1;
+ }
+ 
+ .button-56:hover:after {
+   transform: translate(0, 0);
+ }
+ 
+ .button-56:active {
+   background-color: #fbccc7;
+   outline: 0;
+ }
+ 
+ .button-56:hover {
+   outline: 0;
+   
+ }
+ 
+ @media (min-width: 768px) {
+   .button-56 {
+     padding: 0 40px;
+   }
+ }
+ 
+ 
+ @import url('https://rsms.me/inter/inter.css');
+ 
+ :root {
+   --color-light: white;
+   --color-dark: #212121;
+   --color-signal: #e589d4;
+   
+   --color-background: var(--color-light);
+   --color-text: var(--color-dark);
+   --color-accent: var(--color-signal);
+   
+   --size-bezel: .5rem;
+   --size-radius: 4px;
+   
+   line-height: 1.4;
+   
+   font-family: 'Inter', sans-serif;
+   font-size: calc(.6rem + .4vw);
+   color: var(--color-text);
+   background: var(--color-background);
+   font-weight: 300;
+   padding: 0 calc(var(--size-bezel) * 3);
+   
+ }
+ mark {
+   background: var(--color-accent);
+   color: var(--color-text);
+   font-weight: bold;
+   padding: 0 0.2em;
+   text-decoration: none;
+ }
+ a {
+  text-decoration: none;
+ }
+ .l-design-widht {
+   max-width: 40rem;
+   padding: 1rem;
+ }
+ 
+ .input {
+   position: relative;
+   
+ }
+ 
+ .input label {
+   position: absolute;
+   left: 0;
+   top: 0;
+   padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+   margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
+   background: pink;
+   white-space: nowrap;
+   transform: translate(0, 0);
+   transform-origin: 0 0;
+   background: var(--color-background);
+   transition: transform 120ms ease-in;
+   font-weight: bold;
+   line-height: 1.2;
+ }
+ 
+ 
+ .button-group {
+   margin-top: calc(var(--size-bezel) * 2.5);
+ }
+ 
+ button {
+   color: currentColor;
+   padding: var(--size-bezel) calc(var(--size-bezel) * 2);
+   background: var(--color-accent);
+   border: none;
+   border-radius: var(--size-radius);
+   font-weight: 900;
+ }
+ 
+ button + button {
+   margin-left: calc(var(--size-bezel) * 2);
+ }
+ .icon {
+   display: inline-block;
+   width: 1em; height: 1em;
+   margin-right: .5em;
+ }
+ 
+ .hidden {
+   display: none;
+ }
+ 
+ h2{
+   color:#2c0826;
+   font-size:34px; font-weight:500; text-transform:uppercase;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+ 
+ }
+ 
+ .addcoin{
+   padding: 2%;
+ 
+ }
+ #listing{
+   list-style-type: square
+ }
+ .nav-items {
+   display: block;
+   align-items: stretch;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: flex-end;
+   list-style: none;
+ }
+ img {
+   display: block;
+   max-width: 100%;
+ }
+>>>>>>> 088d3fda0249d517bd0dbe2147ca477b6b2f8037

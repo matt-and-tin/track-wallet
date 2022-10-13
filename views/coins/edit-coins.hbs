@@ -2,19 +2,15 @@
 
 <form action="/coins/{{_id}}/edit" method="post">
   <label> Name:
-    <input type="text" name="name" value="{{name}}" />
+    <input type="text" name="name" value="{{name}}" required/>
   </label>
 
-  <label> Ticker:
-    <input type="text" name="ticker" value="{{ticker}}" />
+  <label> Shortname:
+    <input type="text" name="ticker" value="{{ticker}}" required/>
   </label>
 
-  <label> Value:
-    <input type="number" name="value" value="{{value}}" />
-  </label>
-
-  <label> Market Cap:
-    <input type="number" name="marketcap" value="{{marketcap}}" />
+  <label> Price:
+    <input type="number" name="value" value="{{value}}" required/>
   </label>
 
   <button>Save changes</button>

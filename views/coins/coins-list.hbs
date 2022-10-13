@@ -1,13 +1,11 @@
-<h2>Coins list:</h2>
+<h2>Coins:</h2>
 
 {{#each coins}}
  <section class="coin-summary">
         <h2>{{this.title}}</h2>
         <p>
             Name: {{this.name}}<br />
-            Ticker: {{this.ticker}} <br />
-            Value: ${{this.value}} <br />
-            Marketcap: ${{this.marketcap}} <br />
+            Shortname: {{this.ticker}} <br />
 
             <a href="/coins/{{id}}">More details</a>
             <a href="/coins/{{_id}}/edit">Edit this coin</a>

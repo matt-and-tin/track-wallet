@@ -2,17 +2,21 @@
 
 <form action="/portfolio/{{_id}}/edit" method="post">
   <label> Title:
-    <input type="text" name="title" value="{{title}}" />
+    <input type="text" name="title" value="{{title}}" required/>
   </label>
 
-  <label> Coin:
-    <input type="text" name="coin" value="{{coin}}" />
+  <label> Coins:
+    <br/>
+    <select name="coin" multiple>
+      {{#each coin}}
+        <option name="coin" value="{{this._id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+    <br/>
   </label>
-
-  <label> Amount:
-    <input type="number" name="amount" value="{{amount}}" />
-  </label>
-
+  <p>Hold down the Ctrl (windows) / 
+          Command (Mac) button to select multiple options.</p>
+  <br/>
 
   <button>Save changes</button>
 </form>
