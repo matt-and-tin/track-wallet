@@ -42,7 +42,7 @@ app.use("/", require("./routes/coins.routes"))
 
 app.use("/", require("./routes/portfolio.routes"))
 
-
+//app.use("/", require("./api/api"))
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

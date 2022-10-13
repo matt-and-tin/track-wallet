@@ -32,7 +32,7 @@ router.get("/portfolio/:portfolioId", (req, res, next) => {
          }
          portDetails.value = tv
 
-        console.log(portDetails.coin[0].amount)
+        console.log(portDetails.coin)
         //console.log(portDetails)
         res.render("portfolio/portfolio-details", portDetails)
     })
