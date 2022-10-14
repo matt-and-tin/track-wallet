@@ -1,24 +1,30 @@
 <section>
-    <h2>{{title}}</h2>
+    <h1>{{title}}</h1>
+   
     <p>
-        <strong>Coins: </strong> 
-        {{#each coin}}
-        {{this.name}} 
-        {{/each}}
+         <div id="form">
+        <h2>Coins: 
+     {{#each coin}}<br/>
+        {{this.name}} <br/>
+        {{/each}} </h2> 
         <br />
     </p>
 
     <p>
-        <strong>Total Value:</strong>
-        ${{this.value}}
-    </p>
-
+        <br/>
+        <h2>Total Value:<br/>
+        ${{this.value}}<br/>
+    </p></h2>
+<br/>
     <p>
-        <form action="/portfolio/{{_id}}/delete" method="POST">
-            <button>Delete</button>
-        </form>
-    </p>
-
+        <h2 action="/portfolio/{{_id}}/delete" method="POST">
+            <button class="button-54">Delete</button>
+        </h2>
+    
+</div>
+</p>
 </section>
 
-<a href="/portfolio">Back</a>
+
+   <button class="button-56">
+<a href="/portfolio">Back</a></button>

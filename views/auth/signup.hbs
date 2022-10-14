@@ -1,16 +1,16 @@
 <div id="form">
-  <h2>Signup</h2>
+  <h1>Signup</h1>
   <form action="/signup" method="POST">
-
-    <label> Email
+<br><br>
+    <h2> Email
       <input type="email" name="email" placeholder="rockstar@ironhack.com" required />
-    </label>
+    </h2>
 
-    <label> Password
+    <h2> Password
       <input type="password" name="password" placeholder="********" required />
-    </label>
+    </h2>
 
-    <button type="submit">Create account</button>
+    <button class="button-54" role="button" type="submit">Create account</button>
 
     {{#if errorMessage}}
    {{errorMessage}}

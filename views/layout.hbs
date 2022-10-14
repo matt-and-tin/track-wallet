@@ -12,32 +12,64 @@
   <body>
 
     <header>
-      <p>
-        <a href="/"> Home</a> |
-        <a href="/coins/create"> Create a Coin</a> |
-        <a href="/coins"> List of Coins</a> 
-      </p>
+    
 
+
+<div class="navbar">
+   <button class="button-54" role="button">
+  <a href="/">Home</a></button>
+  <div class="dropdown">
+     <button class="button-54" role="button">
+   +
+     
+    </button>
+    <div class="dropdown-content">
+        <button class="button-54" role="button">
+      <a href="/login">Log In</a></button>
+        <button class="button-54" role="button">
+      <a href="/signup">Sign Up</a></button>
+        <button class="button-54" role="button">
+      <a href="/coins/create">Add a Coin</a></button>
+       <button class="button-54" role="button">
+      <a href="/coins">List of Coins</a></button>
+    </div>
+  </div>
+</div>
+
+
+<br><br><div><br></div>
+      </p></ul>
+    {{{body}}}
       <p>
+        <br><br><h1>
          {{#if userInSession}}
-            Hello, {{ userInSession.email }} |
-            <a href="/user-profile">Profile</a> |
-            <a href="/portfolio">View Portfolios</a> |
-            <a href="/portfolio/create">Create Portfolio</a>
+            Hello, {{ userInSession.email }} </h1>
+             <button class="button-54" role="button">
+            <a href="/user-profile">Profile</a></button>
+                <button class="button-54" role="button">
+            <a href="/portfolio">View Portfolios</a></button>
+             <button class="button-54" role="button">
+            <a href="/portfolio/create">Create Portfolio</a></button>
             <br>
             <form id="logout-form" action="/logout" method="POST">
-               <button>Logout</button>
+                <button class="button-56" role="button">Logout</button>
             </form>
          {{else}}
-            <a href="/signup">Register</a> |
-            <a href="/login">Login</a> |
+          <button class="button-56" role="button">
+            <a href="/signup">Register</a></button>
+             <button class="button-56" role="button">
+            <a href="/login">Login</a></button>
          {{/if}}
       </p>
     </header>
 
-    {{{body}}}
+
+
+
+
 
     <script src="/js/script.js"></script>
   </body>
+
 
 </html>

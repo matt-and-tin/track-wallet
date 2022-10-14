@@ -1,21 +1,22 @@
 <div id="form">
-    <h2>Login</h2>
+    <h1>Login</h1>
 
     {{#if errorMessage}}
         <p class="error">{{errorMessage}}</p>
     {{/if}}
 
     <form action="/login" method="POST">
-
-        <label> Email
+<br><br>
+        <h2> Email
             <input type="email" name="email" placeholder="rockstar@ironhack.com" required />
-        </label>
+        </h2>
 
-        <label>Password
+        <h2>Password
             <input type="password" name="password" placeholder="********" required />
-        </label>
+        </h2>
 
-        <button type="submit">Login</button>
+ <button class="button-54" role="button"
+     type="submit">Login</button>
 
     </form>
 </div>

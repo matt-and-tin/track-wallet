@@ -1,20 +1,24 @@
 <section>
-    <h2>{{name}}</h2>
-    <p>
-        <strong>Shortname: </strong> {{ticker}} <br />
+    <div id="form">
+         <ul>
+    <h1>{{name}}</h1>
+   
+    <p><div>
+        <h2>Shortname:  {{ticker}}</h2>  <br />
     </p>
     <form action="/coins/{{_id}}" method="post"></form>
-    <p>
-        <strong>Price:</strong>
-        ${{value}}
-    </p>
-
-    <p>
+    <p></div><div>
+        <h2>Price:
+        ${{value}}</h2>
+    </p></div>
+<br></section><ul><div>
+    <p><br>
         <form action="/coins/{{_id}}/delete" method="POST">
-            <button>Delete</button>
-        </form>
+         <button class="button-54" role="button">
+            Delete</button>
+        </form></div>
     </p>
-
+</div>
 </section>
-
-<a href="/coins">Back</a>
+ <button class="button-54" role="button">
+<a href="/coins">Back</a></button>
