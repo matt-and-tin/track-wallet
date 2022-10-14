@@ -4,7 +4,7 @@ const Portfolio = require("../models/Portfolio.model");
 
 //READ: List of portfolios
 router.get("/portfolio", (req, res, next) => {
-    Portfolio.find()
+    Portfolio.find({owner: req.session.user})
     .populate("coin")
       .then( portFromDB => {
         
@@ -32,7 +32,7 @@ router.get("/portfolio/:portfolioId", (req, res, next) => {
          }
          portDetails.value = tv
 
-        console.log(portDetails.coin)
+        console.log(portDetails)
         //console.log(portDetails)
         res.render("portfolio/portfolio-details", portDetails)
     })
@@ -61,7 +61,7 @@ router.post('/portfolio/create', (req, res, next) =>{
   const portDetails = {
     title: req.body.title,
       coin: req.body.coin,
-       
+      owner: req.session.user
   }
 
   Portfolio.create(portDetails)
