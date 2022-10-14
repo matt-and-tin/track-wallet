@@ -1,6 +1,8 @@
 <section>
-    <h2>{{title}}</h2>
+    <h1>{{title}}</h1>
+   
     <p>
+         <div id="form">
         <strong>Coins: </strong> 
         {{#each coin}}
         {{this.name}} 
@@ -9,16 +11,17 @@
     </p>
 
     <p>
-        <strong>Total Value:</strong>
+        <h1>Total Value:</h1>
         ${{this.value}}
     </p>
 
     <p>
         <form action="/portfolio/{{_id}}/delete" method="POST">
-            <button>Delete</button>
+            <button class="button-54">Delete</button>
         </form>
-    </p>
-
+    
+</div>
+</p>
 </section>
 
 <a href="/portfolio">Back</a>

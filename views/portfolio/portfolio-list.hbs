@@ -1,8 +1,9 @@
-<h2>Portfolios:</h2>
+<h1>Portfolios:</h1>
 
 {{#each portfolios}}
  <section>
-        <p>
+    <div>
+        <h2>
             Title: {{this.title}}<br />
 
             Coins: 
@@ -12,9 +13,12 @@
 
             
             <br />
-            <a href="/portfolio/{{id}}">More details</a>
-            <a href="/portfolio/{{_id}}/edit">Edit this portfolio</a>
-        </p>
-
+             <button class="button-54" role="button">
+            <a href="/portfolio/{{id}}">More details</a></button>
+             <button class="button-54" role="button">
+            <a href="/portfolio/{{_id}}/edit">Edit this portfolio</a></button>
+        </h2>
+</div id="form">
     </section>
 {{/each}}
+

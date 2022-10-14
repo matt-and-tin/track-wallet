@@ -2,8 +2,8 @@
 
 {{#if userInSession}}
   <h2>Welcome, {{ userInSession.email }}!</h2>
-  <a href="/portfolio">View Portfolios</a> <br/>
-  <a href="/portfolio/create">Create Portfolio</a>
+  <h2 href="/portfolio" type="button" class="button-54">View Portfolios</h2></button> <br/>
+  <h2 href="/portfolio/create" type="button" class="button-54">Create Portfolio</h2>
 {{else}}
   <p>Still no logged in user, sorry!</p>
 {{/if}}
