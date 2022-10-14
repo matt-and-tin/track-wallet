@@ -3,25 +3,28 @@
    
     <p>
          <div id="form">
-        <strong>Coins: </strong> 
-        {{#each coin}}
-        {{this.name}} 
-        {{/each}}
+        <h2>Coins: 
+     {{#each coin}}<br/>
+        {{this.name}} <br/>
+        {{/each}} </h2> 
         <br />
     </p>
 
     <p>
-        <h1>Total Value:</h1>
-        ${{this.value}}
-    </p>
-
+        <br/>
+        <h2>Total Value:<br/>
+        ${{this.value}}<br/>
+    </p></h2>
+<br/>
     <p>
-        <form action="/portfolio/{{_id}}/delete" method="POST">
+        <h2 action="/portfolio/{{_id}}/delete" method="POST">
             <button class="button-54">Delete</button>
-        </form>
+        </h2>
     
 </div>
 </p>
 </section>
 
-<a href="/portfolio">Back</a>
+
+   <button class="button-56">
+<a href="/portfolio">Back</a></button>
