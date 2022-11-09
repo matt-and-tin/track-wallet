@@ -23,7 +23,7 @@ CLI Commands for install:
 
 
 Link to demo:
-https://wallet-track.herokuapp.com/
+https://the-wallet-tracker.adaptable.app/
 
 To create portfolios you must create an account or sign in if you already have one. Coins can be created by anyone using the app.
 
