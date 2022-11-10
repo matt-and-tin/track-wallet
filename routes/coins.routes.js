@@ -1,5 +1,5 @@
 
-const api = require("../api/api")
+const api = require("../utils/api")
 const router = require('express').Router();
 const Coin = require("../models/Coin.model");
 

@@ -25,12 +25,12 @@ router.get("/portfolio/:portfolioId", (req, res, next) => {
     Portfolio.findById(id)
     .populate("coin")
     .then(portDetails => {
-        let tv = 0
-         for(let i=0; i < portDetails.coin.length; i++){
+        let totalValue = 0
+         for(let i=0; i < portDetails.asset.length; i++){
             
-             tv = tv + portDetails.coin[i].value
+             totalValue = totalValue + portDetails.asset[i].coin.value * portDetails.asset[i].amount
          }
-         portDetails.value = tv
+         portDetails.value = totalValue
 
         console.log(portDetails)
         //console.log(portDetails)

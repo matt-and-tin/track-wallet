@@ -10,17 +10,25 @@ Notifications
 ## INSTALL
 
 Web app is online so all you need is a device with one of the following browsers:
-Mozilla Firefox
-Opera
-Safari
+Mozilla Firefox,
+Opera,
+Safari,
 Google Chrome
 
 CLI Commands for install:
 
-*npm install*
+```
+npm install
 
-*npm run dev*
+npm run dev
+```
 
+Environment Variable:
+
+````
+MONGODB_URI: 
+mongodb+srv://matt:Melchi777@cluster0.ibcpu2f.mongodb.net/?retryWrites=true&w=majority
+````
 
 Link to demo:
 https://the-wallet-tracker.adaptable.app/
