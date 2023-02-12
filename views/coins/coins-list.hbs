@@ -1,20 +1,20 @@
-
+<br><br><br>
 
 <h1>Coins:</h1>
-<div id="form">
+<div >
 {{#each coins}}
- <section class="coin-summary">
+ <section >
         <h2>{{this.title}}</h2>
         <h3>
             Name: {{this.name}}<br />
             Shortname: {{this.ticker}} <br />
 
-  <button class="button-54" role="button">
+  <button class="button">
             <a href="/coins/{{id}}">More details</a></button>
-              <button class="button-54" role="button">
+              <button class="button">
             <a href="/coins/{{_id}}/edit">Edit this coin</a></button>
         </h3>
-</div><div id="form">
+
 {{/each}}
 
 </div>

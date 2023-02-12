@@ -1,20 +1,30 @@
-<div id="form">
-  <h1>Signup</h1>
-  <form action="/signup" method="POST">
-<br><br>
-    <h2> Email
-      <input type="email" name="email" placeholder="rockstar@ironhack.com" required />
-    </h2>
+<br><br><br>
 
-    <h2> Password
-      <input type="password" name="password" placeholder="********" required />
-    </h2>
+<h1>Signup</h1>
+    <form action="/signup" method="POST">
 
-    <button class="button-54" role="button" type="submit">Create account</button>
+      <h2>
+        Email <br>
+        <input
+          type="email"
+          name="email"
+          placeholder="rockstar@ironhack.com"
+          required
+        />
+      </h2>
 
-    {{#if errorMessage}}
-   {{errorMessage}}
-{{/if}}
-  </form>
-</div>
+      <h2>
+        Password <br>
+        <input
+          type="password"
+          name="password"
+          placeholder="********"
+          required
+        />
+      </h2>
+
+      <button type="submit" class="button">Create account</button>
+
+    </form>
+
 

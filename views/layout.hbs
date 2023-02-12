@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -11,65 +10,37 @@
 
   <body>
 
-    <header>
     
 
-
-<div class="navbar">
-   <button class="button-54" role="button">
-  <a href="/">Home</a></button>
-  <div class="dropdown">
-     <button class="button-54" role="button">
-   +
-     
-    </button>
-    <div class="dropdown-content">
-        <button class="button-54" role="button">
-      <a href="/login">Log In</a></button>
-        <button class="button-54" role="button">
-      <a href="/signup">Sign Up</a></button>
-        <button class="button-54" role="button">
-      <a href="/coins/create">Add a Coin</a></button>
-       <button class="button-54" role="button">
-      <a href="/coins">List of Coins</a></button>
-    </div>
-  </div>
-</div>
-
-
-<br><br><div><br></div>
-      </p></ul>
-    {{{body}}}
-      <p>
-        <br><br><h1>
-         {{#if userInSession}}
-            Hello, {{ userInSession.email }} </h1>
-             <button class="button-54" role="button">
-            <a href="/user-profile">Profile</a></button>
-                <button class="button-54" role="button">
-            <a href="/portfolio">View Portfolios</a></button>
-             <button class="button-54" role="button">
-            <a href="/portfolio/create">Create Portfolio</a></button>
-            <br>
-            <form id="logout-form" action="/logout" method="POST">
-                <button class="button-56" role="button">Logout</button>
-            </form>
-         {{else}}
-          <button class="button-56" role="button">
-            <a href="/signup">Register</a></button>
-             <button class="button-56" role="button">
-            <a href="/login">Login</a></button>
-         {{/if}}
-      </p>
-    </header>
-
-
-
-
-
+    {{#if userInSession}}
+    <ul class="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/coins/create">Add a Coin</a></li>
+        <li><a href="/coins">View Coins</a></li>
+        <li><a href="/portfolio">View Portfolios</a></li>
+        <li><a href="/portfolio/create">Create Portfolio</a></li>
+        <li style="float:right"><a href="/user-profile">Profile</a></li>
+        <li style="float:right" class="button-li"><form action="/logout" method="POST"><button type="submit" class="nav-button">Log Out</button></form></li>
+      </ul>
+      <div class="name">
+        <h1 >Hello, {{userInSession.email}} </h1>
+        <br/>
+      {{{body}}}
+      </div>
+      
+      
+    {{else}}
+      <ul class="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/coins/create">Add a Coin</a></li>
+        <li><a href="/coins">List of Coins</a></li>
+        <li style="float:right"><a href="/login">Log In</a></li>
+        <li style="float:right"><a href="/signup">Sign Up</a></li>
+      </ul>
+      {{{body}}}
+    {{/if}}
 
     <script src="/js/script.js"></script>
   </body>
-
 
 </html>

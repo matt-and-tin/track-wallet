@@ -4,7 +4,7 @@ const Portfolio = require("../models/Portfolio.model");
 
 //READ: List of portfolios
 router.get("/portfolio", (req, res, next) => {
-    Portfolio.find({owner: req.session.user})
+    Portfolio.find({owner: req.session.user}) //
     .populate("coin")
       .then( portFromDB => {
         
@@ -20,20 +20,20 @@ router.get("/portfolio", (req, res, next) => {
 
 //READ: Portfolio details
 router.get("/portfolio/:portfolioId", (req, res, next) => {
-    const id = req.params.portfolioId;
+    
 
-    Portfolio.findById(id)
+    Portfolio.findById(req.params.portfolioId)
     .populate("coin")
-    .then(portDetails => {
+    .then((portDetails) => {
         let totalValue = 0
-         for(let i=0; i < portDetails.asset.length; i++){
-            
-             totalValue = totalValue + portDetails.asset[i].coin.value * portDetails.asset[i].amount
+         for(let i=0; i < portDetails.coin.length; i++){
+         
+             totalValue = totalValue + portDetails.coin[i].value
          }
          portDetails.value = totalValue
 
         console.log(portDetails)
-        //console.log(portDetails)
+        
         res.render("portfolio/portfolio-details", portDetails)
     })
     .catch( err => {
@@ -46,6 +46,7 @@ router.get("/portfolio/:portfolioId", (req, res, next) => {
 router.get("/portfolio/create", (req, res, next) => {
     Coin.find()
     .then((coinArr) => {
+        console.log(coinArr);
         res.render("portfolio/new-portfolio", {coinArr});
     })
     .catch(err => {
@@ -63,7 +64,7 @@ router.post('/portfolio/create', (req, res, next) =>{
       coin: req.body.coin,
       owner: req.session.user
   }
-
+  // console.log(portDetails);
   Portfolio.create(portDetails)
   .then((portDetails) => {   
       res.redirect("/portfolio")
@@ -80,7 +81,7 @@ router.get("/portfolio/:portfolioId/edit", (req, res, next) => {
     Portfolio.findById(req.params.portfolioId)
         .populate("coin")
       .then( (portDetails) => {
-        console.log(portDetails.coin)
+        console.log(portDetails)
         res.render("portfolio/edit-portfolio", portDetails);
       })
       .catch( err => {
@@ -95,8 +96,7 @@ router.get("/portfolio/:portfolioId/edit", (req, res, next) => {
   
     const newDetails = {
         title: req.body.title,
-      coin: req.body.coin,
-      amount: req.body.amount,
+      coin: req.body.coin
     }
   
     Portfolio.findByIdAndUpdate(portfolioId, newDetails)

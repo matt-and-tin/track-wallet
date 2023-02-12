@@ -1,21 +1,20 @@
+<br><br><br>
 <h1>Edit coin: {{name}}</h1>
-<div id="form">
+
 <form action="/coins/{{_id}}/edit" method="post">
-<ul>
- <li><h2> Name:
+
+ <h2> Name:<br>
     <input type="text" name="name" value="{{name}}" required/>
-  </h2></li>
+  </h2>
 
-  <li><h2> Shortname:
+  <h2> Shortname:<br>
     <input type="text" name="ticker" value="{{ticker}}" required/>
-  </h2></li>
+  </h2>
 
-  <li><h2> Price:
+  <h2> Price:<br>
     <input type="number" name="value" value="{{value}}" required/>
-  </h2></li>
-  </ul>
-<br><br>
-    <button class="button-54" role="button">
+  </h2>
+
+    <button class="button">
  Save changes</button>
 </form>
-</div>

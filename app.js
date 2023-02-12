@@ -32,15 +32,14 @@ app.use((req, res, next) => {
     
 
 // 👇 Start handling routes here
-const index = require("./routes/index.routes");
-app.use("/", index);
 
-const authRoutes = require("./routes/auth.routes");
-app.use("/", authRoutes);
+app.use("/", require("./routes/index.routes"));
 
-app.use("/", require("./routes/coins.routes"))
+app.use("/", require("./routes/auth.routes"));
 
-app.use("/", require("./routes/portfolio.routes"))
+app.use("/", require("./routes/coins.routes"));
+
+app.use("/", require("./routes/portfolio.routes"));
 
 
 

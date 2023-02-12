@@ -9,10 +9,19 @@ const portSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "User",
           }],
-        coin: [{
-                 type: Schema.Types.ObjectId,
-                 ref: "Coin",
-               }],    
+              coin:[{
+                type: Schema.Types.ObjectId,
+                   ref: "Coin"
+              }],
+  //       portfolio: [
+  //         {
+  //           coin:{
+  //             type: Schema.Types.ObjectId,
+  //                ref: "Coin"
+  //           },
+  //             amount: Number
+  //   }
+  // ],    
     },
 );
 

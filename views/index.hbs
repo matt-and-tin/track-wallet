@@ -1,9 +1,73 @@
+<br /><br />
+<h1>Coin Tracker</h1>
 
-<div id="wrapper">
-    <div id="container">
+<h4>Welcome to Coin Tracker! Keep track of your favourite cryptocurrencies with
+  real-time price data!</h4>
 
-        <h6>Wallet Tracker</h6>
+{{#if userInSession}}
+        <br /><br />
+  <h2>Welcome, {{userInSession.email}}!</h2>
 
-</div>
+{{else}}
 
+  <br /><br />
+    <h1>Signup</h1>
+    <form action="/signup" method="POST">
 
+      <h2>
+        Email <br>
+        <input
+          type="email"
+          name="email"
+          placeholder="rockstar@ironhack.com"
+          required
+        />
+      </h2>
+
+      <h2>
+        Password <br>
+        <input
+          type="password"
+          name="password"
+          placeholder="********"
+          required
+        />
+      </h2>
+
+      <button type="submit" class="button">Create account</button>
+
+    </form>
+    
+    <br /><br />
+    <h3>or</h3>
+    <br /><br />
+    
+    <h1>Login</h1>
+
+    <form action="/login" method="POST">
+      
+      <h2>
+        Email <br>
+        <input
+          type="email"
+          name="email"
+          placeholder="rockstar@ironhack.com"
+          required
+        />
+      </h2>
+
+      <h2>Password <br>
+        <input
+          type="password"
+          name="password"
+          placeholder="********"
+          required
+        />
+      </h2>
+
+      <button type="submit" class="button">Log In</button>
+
+    </form>
+ 
+
+{{/if}}
