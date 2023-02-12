@@ -31,7 +31,7 @@ mongodb+srv://matt:Melchi777@cluster0.ibcpu2f.mongodb.net/?retryWrites=true&w=ma
 ````
 
 Link to demo:
-https://the-wallet-tracker.adaptable.app/
+https://coin-tracker.onrender.com/  
 
 To create portfolios you must create an account or sign in if you already have one. Coins can be created by anyone using the app.
 
